@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="Assignments\Day6Imp.cs" />
     <Compile Include="Assignments\Day1.cs" />
+    <Compile Include="Assignments\Day17.cs" />
     <Compile Include="Assignments\Day2.cs" />
     <Compile Include="Assignments\Day3.cs" />
     <Compile Include="Assignments\Day4.cs" />

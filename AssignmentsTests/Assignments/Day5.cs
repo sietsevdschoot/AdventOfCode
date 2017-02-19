@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using AssignmentsTests.TestData;
@@ -11,8 +12,6 @@ namespace AssignmentsTests.Assignments
     public class Day5
     {
         private static readonly Regex HasTwoRepeatingCharacters = new Regex(@"(.)\1{1}");
-        private static readonly Regex HasTwoLetterRepetition = new Regex(@"^(.{2}).*\1");
-        private static readonly Regex HasRepeatingCharacterWithOneLetterInBetween = new Regex(@"(.{1}).{1}\1.*$");
         
         [TestMethod]
         public void Solve()
@@ -28,6 +27,8 @@ namespace AssignmentsTests.Assignments
         {
             var answer = Files.Day5.Split(new[] {Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries)
                 .Count(IsNiceStringPartTwo);
+
+            answer.Should().BeGreaterThan(9);
 
             Console.WriteLine(answer);
         }
@@ -76,9 +77,24 @@ namespace AssignmentsTests.Assignments
 
         private bool IsNiceStringPartTwo(string value)
         {
+            var parts = new List<string>();
+
+            for (var i = 2; i < value.Length; i += 2)
+            {
+                parts.Add(new string(value.Skip(i - 2).Take(2).ToArray()));
+                parts.Add(new string(value.Skip(i - 1).Take(2).ToArray()));
+            }
+
+            var hasTwoLetterRepetitions = parts.ToList().GroupBy(x => x).Any(x => x.Count() > 1);
+
+            var hasRepeatingCharacterWithOneLetterInBetween = value
+                .Select((x, i) => new {x, i})
+                .GroupBy(x => x.x)
+                .Where(g => g.Any(c1 => g.Any(c2 => Math.Abs(c1.i - c2.i) == 2)));
+
             return
-                HasTwoLetterRepetition.IsMatch(value) &&
-                HasRepeatingCharacterWithOneLetterInBetween.IsMatch(value);
+                hasTwoLetterRepetitions &&
+                hasRepeatingCharacterWithOneLetterInBetween.Any();
         }
     }
 }

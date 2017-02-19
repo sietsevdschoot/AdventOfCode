@@ -56,10 +56,5 @@ namespace AssignmentsTests.Assignments
             })
             .Sum();
         }
-
-
-
-
-
     }
 }

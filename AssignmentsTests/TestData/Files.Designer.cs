@@ -187,5 +187,29 @@ namespace AssignmentsTests.TestData {
                 return ResourceManager.GetString("Day5", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to turn on 489,959 through 759,964
+        ///turn off 820,516 through 871,914
+        ///turn off 427,423 through 929,502
+        ///turn on 774,14 through 977,877
+        ///turn on 410,146 through 864,337
+        ///turn on 931,331 through 939,812
+        ///turn off 756,53 through 923,339
+        ///turn off 313,787 through 545,979
+        ///turn off 12,823 through 102,934
+        ///toggle 756,965 through 812,992
+        ///turn off 743,684 through 789,958
+        ///toggle 120,314 through 745,489
+        ///toggle 692,845 through 866,994
+        ///turn off 587,176 through 850,273
+        ///turn off 674,321 through 793,388
+        ///toggle 749,672  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Day6 {
+            get {
+                return ResourceManager.GetString("Day6", resourceCulture);
+            }
+        }
     }
 }

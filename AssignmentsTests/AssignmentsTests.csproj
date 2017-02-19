@@ -71,11 +71,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Assignments\Day6Imp.cs" />
     <Compile Include="Assignments\Day1.cs" />
     <Compile Include="Assignments\Day2.cs" />
     <Compile Include="Assignments\Day3.cs" />
     <Compile Include="Assignments\Day4.cs" />
     <Compile Include="Assignments\Day5.cs" />
+    <Compile Include="Assignments\Day6.cs" />
     <Compile Include="TestData\Files.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -89,6 +91,7 @@
     <Content Include="TestData\Day3.txt" />
     <Content Include="TestData\Day4.txt" />
     <Content Include="TestData\Day5.txt" />
+    <Content Include="TestData\Day6.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
